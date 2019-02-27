@@ -1,8 +1,12 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const { makeExecutableSchema } = require('graphql-tools');
 
 const app = express();
+
+app.use(cors());
 
 app.get('/hello', (req, res) => res.send('Hello World!'));
 
